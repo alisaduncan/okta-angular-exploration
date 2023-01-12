@@ -2,26 +2,36 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
 
-## Development server
+This is an example of OktaAngular SDK and consuming code
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Getting going
 
-## Code scaffolding
+```
+git clone git@github.com:alisaduncan/okta-angular-exploration.git
+cd okta-angular-exploration
+npm ci
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Build the library 
 
-## Build
+```
+npm run build okta-angular
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Run the app
+Update with your Okta config or run a server for the config loading which returns the config values.
+The [okta-angular-async-config-example](https://github.com/oktadev/okta-angular-async-load-example) repo has an Express server you can use
 
-## Running unit tests
+Once you have your configs set up
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+npm start
+```
+App runs on localhost:4200
 
-## Running end-to-end tests
+Alternatively, run the following to have the app auto open
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```
+npm start -- -o
+```
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
