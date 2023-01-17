@@ -3,10 +3,17 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
 
 This is an example of OktaAngular SDK and consuming the SDK. It demonstrates
-1. Using Angular CLI to create a library project, which sets up the [build tools for the library](https://angular.io/guide/creating-libraries) and sets configuration for consuming the library in the same project - file paths are editable in the `angular.json` for better consistency with other projects
+1. Using Angular CLI to create a library project, which sets up the [build tools for the library](https://angular.io/guide/creating-libraries) and sets configuration for consuming the library in the same project - file paths are editable in the `angular.json` for better consistency with other projects.
+You can recreate the project using the following Angular CLI commands
+```
+ng new okta-angular --no-create-application
+cd okta-angular
+ng g library okta-angular
+ng g application okta-app --routing --style=css
+```
 2. Sets up `forRoot()` recommended pattern for configuring the `OktaAuthModule` without requiring the consumer to configure the `OKTA_CONFIG` injection token provider and to ensure a singleton of the module exists for the application. 
 3. Demonstrates watching `RouterEvent`s to avoid defining a route specifically for the callback component
-4. Enhances the existing SDK with the ability to load Okta configuration asynchronously (such as via a Http call) as a built-in capability. Decoupling the config loading from app loading allows the consumer to avoid having to go through a multi-step workaround and making the external server call when bootstrapping the application.
+4. Enhances the existing SDK with the ability to load Okta configuration asynchronously (such as via a Http call) as a built-in capability. Decoupling the config loading from app loading allows the consumer to avoid having to go through a multi-step workaround and making the external server call when bootstrapping the application as shown in [this repo](https://github.com/oktadev/okta-angular-async-load-example).
 
 ## Getting going
 
