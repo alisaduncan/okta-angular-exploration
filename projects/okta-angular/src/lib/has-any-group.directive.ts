@@ -38,6 +38,6 @@ export class OktaHasAnyGroupDirective implements OnInit, OnChanges, OnDestroy {
 
   ngOnDestroy(): void {
     this.destroySub$.next();
-    this.destroySub$.unsubscribe();
+    this.destroySub$.complete();
   }
 }
