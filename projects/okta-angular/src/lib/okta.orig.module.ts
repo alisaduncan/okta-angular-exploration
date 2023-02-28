@@ -3,13 +3,15 @@ import { Inject, ModuleWithProviders, NgModule, Optional } from '@angular/core';
 import { Router } from '@angular/router';
 import { toRelativeUrl } from '@okta/okta-auth-js';
 import { OktaAuthStateOrigService } from './auth-state.orig.service';
+import { OktaHasAnyGroupDirective } from './has-any-group.directive';
 import { OktaAngularComponent } from './okta-angular.component';
 import { OktaAuthGuard } from './okta-auth.guard';
 import { OktaConfigOrig, OKTA_AUTH, OKTA_CONFIG_ORIG } from './okta.config';
 
 // This is pretty much the existing OktaAuthModule implementation, with the extra forRoot static method
 @NgModule({
-  declarations: [OktaAngularComponent],
+  declarations: [OktaAngularComponent, OktaHasAnyGroupDirective],
+  exports: [OktaAngularComponent, OktaHasAnyGroupDirective],
   providers: [
     OktaAuthGuard,
     OktaAuthStateOrigService,
@@ -52,7 +54,6 @@ export class OktaAuthOrigModule {
         router.navigateByUrl(routePath);
       };
     }
-
     // Start services
     oktaAuth.start();
   }
