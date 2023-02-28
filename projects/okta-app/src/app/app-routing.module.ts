@@ -8,7 +8,8 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent, canActivate: [OktaAuthGuard] },
   { path: 'profile2', component: ProfileComponent, canActivate: [OktaAuthGuard] },
   { path: 'profile3', component: ProfileComponent, canActivate: [OktaAuthGuard] },
-  { path: 'login/callback', component: OktaAngularComponent }
+  { path: 'protected', loadChildren: () => import('./protected/protected.module').then(m => m.ProtectedModule) },
+  { path: 'login/callback', component: OktaAngularComponent },
   // { path: '', component: AppComponent },
   // { path: '', redirectTo: '', pathMatch: 'full', component: AppComponent }
 ];

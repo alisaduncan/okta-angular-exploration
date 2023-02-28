@@ -11,6 +11,9 @@ import { filter, map, Observable } from 'rxjs';
         Welcome, {{name}}
       </span>
     </p>
+    <p *oktaHasAnyGroup="'test'">
+      Hello from oktaHasAnyGroup directive 
+    </p>
   `,
   styles: [
   ]
