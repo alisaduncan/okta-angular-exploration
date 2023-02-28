@@ -10,3 +10,4 @@ export * from './lib/okta.module';
 export * from './lib/okta.orig.module';
 export * from './lib/auth-state.orig.service';
 export * from './lib/okta.config';
+export * from './lib/has-any-group.directive';
